@@ -1,0 +1,13 @@
+
+
+<suite name="Ecommerce Test Suite">
+
+    <test name="Login Test">
+
+        <classes>
+            <class name="com.ecommerce.testsuite.tests.LoginTest"/>
+        </classes>
+
+    </test>
+
+</suite>
