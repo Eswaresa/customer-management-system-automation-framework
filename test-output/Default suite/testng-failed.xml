@@ -6,7 +6,7 @@
       <class name="com.ecommerce.testsuite.tests.LoginTest">
         <methods>
           <include name="tearDown"/>
-          <include name="LoginTestPositiveTC"/>
+          <include name="loginTestNegative"/>
           <include name="setUp"/>
           <include name="initpage"/>
         </methods>

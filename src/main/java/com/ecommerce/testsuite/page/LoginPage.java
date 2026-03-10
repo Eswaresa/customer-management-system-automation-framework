@@ -16,6 +16,7 @@ public class LoginPage {
 	By InvalidPassword = By.id("password");
 	By ClickBtn = By.id("login-button");
 	By ProductTitle = By.className("title");
+	By invalidloginerrorText = By.xpath("//h3[@data-test= 'error']");
 
 	public LoginPage(WebDriver driver) {
 
@@ -23,19 +24,23 @@ public class LoginPage {
 	}
 
 	public void loginUsername(String user) {
-		driver.findElement(UserName).sendKeys(user);;
+		driver.findElement(UserName).sendKeys(user);
+		;
 	}
 
 	public void loginPassword(String pass) {
-		driver.findElement(Password).sendKeys(pass);;
+		driver.findElement(Password).sendKeys(pass);
+		;
 	}
 
 	public void loginInvalidUsername(String invalidUser) {
-		driver.findElement(InvalidUserName).sendKeys(invalidUser);;
+		driver.findElement(InvalidUserName).sendKeys(invalidUser);
+		;
 	}
 
 	public void loginInvalidPassword(String invalidPass) {
-		driver.findElement(InvalidPassword).sendKeys(invalidPass);;
+		driver.findElement(InvalidPassword).sendKeys(invalidPass);
+		;
 	}
 
 	public void loginbtn() {
@@ -50,5 +55,10 @@ public class LoginPage {
 		return title.getText();
 
 	}
+	public String loginInvalidErrorText() {
+		return driver.findElement(invalidloginerrorText).getText();
+		
+	}
+	
 
 }

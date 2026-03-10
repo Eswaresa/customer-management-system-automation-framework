@@ -21,7 +21,7 @@ public class LoginTest extends Basetest {
 	}
 
 	@Test
-	public void LoginTestPositiveTC() throws IOException {
+	public void loginTestPositiveTC() throws IOException {
 		ConfigReader config = new ConfigReader();
 
 		String username = config.getuserName();
@@ -35,6 +35,24 @@ public class LoginTest extends Basetest {
 		String title = driver.getTitle();
 
 		Assert.assertEquals(title, "Swag Labs");
+
+	}
+
+	@Test
+	public void loginTestNegative() throws IOException {
+		ConfigReader config = new ConfigReader();
+
+		String invalidUserName = config.getInvalidUsername();
+		String invalidPassword = config.getInvalidPassword();
+		lp.loginInvalidUsername(invalidUserName);
+		lp.loginInvalidPassword(invalidPassword);
+		lp.loginbtn();
+		String actual = lp.loginInvalidErrorText();
+		String Expected = "Username and password do not match";
+		
+		//WaitUtils.waitForTitle(driver, "Expected", 7);
+
+		Assert.assertTrue(actual.contains(Expected), "Expected text not found. Actual text is: " + actual);
 
 	}
 
