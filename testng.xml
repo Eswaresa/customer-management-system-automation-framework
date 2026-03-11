@@ -1,13 +1,19 @@
 
 
-<suite name="Ecommerce Test Suite" parallel="methods" thread-count="2">
+<suite name="Ecommerce Test Suite" parallel="methods"
+	thread-count="2">
 
-    <test name="Login Test">
+	<listeners>
+		<listener
+			class-name="com.ecommerce.testsuite.listeners.ExtentTestListener" />
+	</listeners>
 
-        <classes>
-            <class name="com.ecommerce.testsuite.tests.LoginTest"/>
-        </classes>
+	<test name="Login Test">
 
-    </test>
+		<classes>
+			<class name="com.ecommerce.testsuite.tests.LoginTest" />
+		</classes>
+
+	</test>
 
 </suite>

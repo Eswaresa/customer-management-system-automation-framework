@@ -34,7 +34,7 @@ public class LoginTest extends Basetest {
 
 		String title = driver.getTitle();
 
-		Assert.assertEquals(title, "Swag Labs");
+		Assert.assertEquals(title, "Product");
 
 	}
 
